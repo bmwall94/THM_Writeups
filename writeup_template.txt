@@ -1,0 +1,41 @@
+Full learning path. Ex: Complete Beginner > Network Exploitation Basics > Network Services 2
+Room: 
+  https://tryhackme.com/r/room/networkservices2
+Room Author: 
+  PoloMints (https://tryhackme.com/p/PoloMints)
+Writeup Author: 
+  bmwallace94 (https://tryhackme.com/p/bmwallace94, 
+  Github: https://github.com/bmwall94/THM_Writeups,
+  THM Discord: @Aura, 
+  linkedIn: www.linkedin.com/in/ben-wallace-cs)
+THM writeups exclude flags by default, but act as a guided walkthrough for the room.
+
+Abstract: Brief description of the room
+
+
+Author's notes:
+
+
+
+Task 1
+  Question 1: Question text
+
+
+
+  Answer:
+  
+
+
+  Question 2:
+
+
+
+  Answer:
+  
+
+  Question 3:
+
+  Answer:
+  
+  
+  Task 2
