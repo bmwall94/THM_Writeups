@@ -1,1 +1,118 @@
-test
+Complete Beginner > Network Exploitation Basics > Network Services
+Room: 
+  https://tryhackme.com/r/room/networkservices
+Room Author: 
+  PoloMints (https://tryhackme.com/p/PoloMints)
+Writeup Author: 
+  bmwallace94 (https://tryhackme.com/p/bmwallace94, 
+  Github: https://github.com/bmwall94/THM_Writeups,
+  THM Discord: @Aura, 
+  linkedIn: www.linkedin.com/in/ben-wallace-cs)
+Date published: 6/24/2024, 5:28 PM
+THM writeups act as guided walkthroughs for the room, but exclude flags by default. If you notice any errors with this writeup, please DM me on the THM Discord @Aura.
+
+Room description: 
+Learn about, then enumerate and exploit a variety of network services and misconfigurations.
+
+
+**Author's notes:**
+At the time of this writeup, I was still a beginner. It was my first time using SMB, telnet, FTP connections, as well as netcat, reverse-shells, and hydra.
+I personally felt this was a gross scope for a beginner and it took me way longer than 60 minutes for me to complete it. That being said, it is fun, interesting
+and easy (once you understand everything). This room was completed on Jun 22, 2024 using a virtual machine running Kali Linux through 
+
+
+Task 1 - Get Connected
+  Question 1: Ready? Let's get going!
+  Answer: No answer needed.
+
+Task 2 - Understanding SMB
+
+  All of the questions for Task 2 can be answered by reading the material in this section.
+  
+  Question 1: What does SMB stand for?
+  Answer: Server Message Block
+  Question 2: What type of protocol is SMB?
+  Answer: response-request
+  Question 3: What do clients connect to servers using?
+  Answer: TCP/IP
+  Question 4: What systems does Samba run on?
+  Answer: Unix
+
+Task 3 - Enumerating SMB
+
+  Question 1: Conduct an nmap scan of your choosing. How many ports are open?
+
+  
+
+  Answer: 3
+
+  Question 2: What ports is SMB running on?
+
+  
+
+  Answer: 139/445
+
+  Question 3: Let's get startus with Enum4Linux. Conduct a full basic enumeration. For starters, what is the workgroup name?
+
+  
+
+  Answer: WORKGROUP
+
+  Question 4: What comes up as the name of the machine?
+
+
+
+  Answer: POLOSMB
+
+  Question 5: What operating system version is running?
+
+
+
+  Answer: 6.1
+
+  Question 6: What share sticks out as something we might want to investigate?
+
+  
+
+  Answer: profiles
+
+Task 4 - Exploiting SMB
+  Question 1: What would be the correct syntax to access an SMB share called "secret" as a user "suit" on a machine with the IP 10.10.10.2 on the default port?
+
+  Answer: smbclient//10.10.10.2/secret -U suit -p 445
+
+  Question 2: reat! Now you've got a hang of the syntax, let's have a go at trying to exploit this vulnerability. You have a list of users, the 
+  name of the share (smb) and a suspected vulnerability.
+
+  Answer: No answer needed.
+
+  Question 3: Lets see if our interesting share has been configured to allow anonymous access, I.E it doesn't require authentication to view the files. 
+  We can do this easily by:
+
+- using the username "Anonymous"
+
+- connecting to the share we found during the enumeration stage
+
+- and not supplying a password.
+
+Does the share allow anonymous access? Y/N?
+
+  Question 4: Great! Have a look around for any interesting documents that could contain valuable information. Who can we assume this profile folder belongs to?
+
+  Question 5: What service has been configured to allow him to work from home?
+
+  Question 6: Okay! Now we know this, what directory on the share should we look in?
+
+  Question 7: This directory contains authentication keys that allow a user to authenticate themselves on, and then access, a server. 
+  Which of these keys is most useful to us?
+
+  Answer:
+
+  Download this file to your local machine, and change the permissions to "600" using "chmod 600 [file]".
+
+  Now, use the information you have already gathered to work out the username of the account. Then, use the service and key to log-in to the server.
+
+  What is the smb.txt flag?
+
+  Question 8: [THM flags are omitted from writeups]
+
