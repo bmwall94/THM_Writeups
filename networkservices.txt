@@ -115,4 +115,3 @@ Does the share allow anonymous access? Y/N?
   What is the smb.txt flag?
 
   Question 8: [THM flags are omitted from writeups]
-
